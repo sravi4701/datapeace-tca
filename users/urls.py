@@ -5,10 +5,10 @@ from rest_framework import routers
 
 from .api import views as api_view
 
-router = routers.DefaultRouter()
-router.register(r'api/users', api_view.UserViewSet)
+# router = routers.DefaultRouter()
+# router.register(r'api/users', api_view.UserViewSet)
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="home.html")),
-    url(r'^', include(router.urls)),
+    url(r'^api/users/$', api_view.UserListCreateView.as_view(), name='list-create'),
 ]
