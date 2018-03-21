@@ -8,7 +8,7 @@ class User(models.Model):
 	age 			= models.IntegerField()
 	city 			= models.CharField(max_length=100)
 	state 			= models.CharField(max_length=100)
-	zip_ 			= models.IntegerField()
+	zip 			= models.IntegerField()
 	email 			= models.EmailField(max_length=100)
 	web 			= models.CharField(max_length=100)
 
