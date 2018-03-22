@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from ..models import User
 
+# Serializer class used for validating user data & convert it to json
 class UserSerializer(serializers.ModelSerializer):
 
 	class Meta:
