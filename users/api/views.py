@@ -1,5 +1,5 @@
-from django.conf import settings
 from rest_framework import generics
+from rest_framework import pagination
 
 from ..models import User
 from .serializers import UserSerializer
@@ -24,6 +24,12 @@ class UserListCreateView(generics.ListCreateAPIView):
 			queryset = queryset.order_by(sort)
 
 		if limit:
-			settings.REST_FRAMEWORK['PAGE_SIZE'] = int(limit)
+			pagination.PageNumberPagination.page_size = int(limit)
 
 		return queryset
+
+
+class UserRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+	serializer_class = UserSerializer
+	lookup_field = 'id'
+	queryset = User.objects.all()
