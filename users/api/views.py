@@ -35,6 +35,9 @@ class UserListCreateView(generics.ListCreateAPIView):
 		if limit:
 			pagination.PageNumberPagination.page_size = int(limit)
 
+		else:
+			pagination.PageNumberPagination.page_size = 5
+
 		return queryset
 
 

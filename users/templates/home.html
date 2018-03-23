@@ -21,6 +21,24 @@
 				<p>For running the API, Django rest framework has it's own browsable api console </p>
 				<p>If you want to run it on terminal then use curl Something like: <i>curl -H "Content-type:application/json" http://127.0.0.1:8000/api/users/ | json_pp</i> </p>
 			</li>
+			<li>
+				<p>Use PUT http method for fully update the info, in this you have to provide all the fields and it's vavlues</p>
+				<p>Use PATCH http method for partially update the info, in this you have to provide some of the fields and it's vavlues</p>
+			</li>
 		</ul>
+
+		<h3>App Explanation</h3>
+		<ul>
+			<li>
+				<p>First I have created a django project <b>datapeace</b> using django-admin</p>
+			</li>
+			<li>
+				<p>Then I created a separate app <b>users</b> using python manage.py</p>
+			</li>
+			<li>
+				<p>Then I have created an <b>api</b> package inside <b>users</b> app for all business logic of api</p>
+			</li>
+		</ul>
+
 	</body>
 </html>
